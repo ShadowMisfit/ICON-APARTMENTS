@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICON APARTMENTS | Galerija</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-color: #2D5F3E;
+      --dark-bg: #111;
+      --light-bg: #f5f5f5;
+      --font-family: 'Poppins', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: var(--font-family); color: #333; line-height:1.6; }
+    header { position: fixed; width:100%; top:0; left:0; background: rgba(255,255,255,0.95); display:flex; justify-content: space-between; align-items:center; padding:1rem 2rem; z-index:1000; }
+    .logo img { height:60px; width:auto; }
+    .lang-switch { margin-left:1rem; font-size:0.9rem; }
+    .lang-switch span { cursor:pointer; margin:0 0.25rem; }
+    .lang-switch .active { font-weight:600; color: var(--primary-color); }
+    .menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+    .menu-toggle span { width:25px; height:3px; background:#333; margin:4px 0; transition:0.3s; }
+    nav ul { display:flex; gap:1.5rem; list-style:none; }
+    nav ul.active { display:flex; }
+    nav a { text-decoration:none; color:#333; font-weight:500; }
+    nav a:hover { color: var(--primary-color); }
+    .section { padding:4rem 2rem; margin-top:72px; }
+    .section-heading { text-align:center; margin-bottom:2rem; font-size:2rem; color: var(--primary-color); }
+    .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1rem; }
+    .gallery img { width:100%; height:200px; object-fit:cover; border-radius:4px; cursor:pointer; }
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 2000;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 4px;
+    }
+    #lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    footer { background:#222; color:#fff; text-align:center; padding:2rem; font-size:0.9rem; }
+    @media (max-width:768px) {
+      .menu-toggle { display:flex; position:absolute; top:16px; right:16px; }
+      nav ul { display:none; flex-direction:column; background:#fff; position:absolute; top:72px; right:0; width:200px; padding:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+      nav ul.active { display:flex; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <div class="logo"><img src="./Logo ICON-1.png" alt="ICON APARTMENTS"></div>
+      <div class="lang-switch">
+        <span class="active" data-lang="sr">SR</span> | <span data-lang="en">EN</span> | <span data-lang="ru">RU</span>
+      </div>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html" data-key="nav.home">Početna</a></li>
+        <li><a href="index.html#suites" data-key="nav.suites">Smeštaj</a></li>
+        <li><a href="index.html#amenities" data-key="nav.amenities">Sadržaji</a></li>
+        <li><a href="gallery.html" data-key="nav.gallery">Galerija</a></li>
+        <li><a href="index.html#contact" data-key="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="gallery" class="section">
+    <h2 class="section-heading" data-key="gallery.heading">Galerija</h2>
+    <div class="gallery">
+      <img src="./photos/1.jpg" data-full="./photos/1.jpg" alt="Galerija slika">
+      <img src="./photos/2.jpg" data-full="./photos/2.jpg" alt="Galerija slika">
+      <img src="./photos/3.jpg" data-full="./photos/3.jpg" alt="Galerija slika">
+      <img src="./photos/4.jpg" data-full="./photos/4.jpg" alt="Galerija slika">
+      <img src="./photos/5.jpg" data-full="./photos/5.jpg" alt="Galerija slika">
+      <img src="./photos/6.jpg" data-full="./photos/6.jpg" alt="Galerija slika">
+      <img src="./photos/7.jpg" data-full="./photos/7.jpg" alt="Galerija slika">
+      <img src="./photos/8.jpg" data-full="./photos/8.jpg" alt="Galerija slika">
+      <img src="./photos/9.jpg" data-full="./photos/9.jpg" alt="Galerija slika">
+      <img src="./photos/10.jpg" data-full="./photos/10.jpg" alt="Galerija slika">
+      <img src="./photos/11.jpg" data-full="./photos/11.jpg" alt="Galerija slika">
+      <img src="./photos/12.jpg" data-full="./photos/12.jpg" alt="Galerija slika">
+      <img src="./photos/13.jpg" data-full="./photos/13.jpg" alt="Galerija slika">
+      <img src="./photos/14.jpg" data-full="./photos/14.jpg" alt="Galerija slika">
+      <img src="./photos/15.jpg" data-full="./photos/15.jpg" alt="Galerija slika">
+      <img src="./photos/16.jpg" data-full="./photos/16.jpg" alt="Galerija slika">
+      <img src="./photos/17.jpg" data-full="./photos/17.jpg" alt="Galerija slika">
+      <img src="./photos/18.jpg" data-full="./photos/18.jpg" alt="Galerija slika">
+      <img src="./photos/19.jpg" data-full="./photos/19.jpg" alt="Galerija slika">
+      <img src="./photos/20.jpg" data-full="./photos/20.jpg" alt="Galerija slika">
+      <img src="./photos/21.jpg" data-full="./photos/21.jpg" alt="Galerija slika">
+      <img src="./photos/22.jpg" data-full="./photos/22.jpg" alt="Galerija slika">
+      <img src="./photos/23.jpg" data-full="./photos/23.jpg" alt="Galerija slika">
+      <img src="./photos/24.jpg" data-full="./photos/24.jpg" alt="Galerija slika">
+      <img src="./photos/25.jpg" data-full="./photos/25.jpg" alt="Galerija slika">
+      <img src="./photos/26.jpg" data-full="./photos/26.jpg" alt="Galerija slika">
+      <img src="./photos/27.jpg" data-full="./photos/27.jpg" alt="Galerija slika">
+      <img src="./photos/28.jpg" data-full="./photos/28.jpg" alt="Galerija slika">
+      <img src="./photos/29.jpg" data-full="./photos/29.jpg" alt="Galerija slika">
+      <img src="./photos/30.jpg" data-full="./photos/30.jpg" alt="Galerija slika">
+      <img src="./photos/31.jpg" data-full="./photos/31.jpg" alt="Galerija slika">
+      <img src="./photos/32.jpg" data-full="./photos/32.jpg" alt="Galerija slika">
+      <img src="./photos/33.jpg" data-full="./photos/33.jpg" alt="Galerija slika">
+      <img src="./photos/34.jpg" data-full="./photos/34.jpg" alt="Galerija slika">
+      <img src="./photos/35.jpg" data-full="./photos/35.jpg" alt="Galerija slika">
+      <img src="./photos/36.jpg" data-full="./photos/36.jpg" alt="Galerija slika">
+      <img src="./photos/37.jpg" data-full="./photos/37.jpg" alt="Galerija slika">
+      <img src="./photos/38.jpg" data-full="./photos/38.jpg" alt="Galerija slika">
+      <img src="./photos/39.jpg" data-full="./photos/39.jpg" alt="Galerija slika">
+    </div>
+  </section>
+
+  <div id="lightbox"></div>
+
+  <footer>
+    <p data-key="footer.contact">Pozovite nas: +381 XX XXX XXXX | Email: info@iconapartments.rs</p>
+    <p>&copy; 2025 ICON APARTMENTS. <span data-key="footer.rights">Sva prava zadržana.</span></p>
+  </footer>
+
+  <script>
+    // Menu toggle
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navList').classList.toggle('active');
+    });
+
+    // Lightbox logic
+    const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+    const fullSources = galleryImages.map(img => img.getAttribute('data-full'));
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    galleryImages.forEach((img, idx) => img.addEventListener('click', () => {
+      currentIndex = idx;
+      lightbox.innerHTML = `<img src="${fullSources[currentIndex]}" alt="Galerija slika">`;
+      lightbox.classList.add('active');
+    }));
+    lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') currentIndex = (currentIndex + 1) % fullSources.length;
+      if (e.key === 'ArrowLeft') currentIndex = (currentIndex - 1 + fullSources.length) % fullSources.length;
+      if (e.key === 'Escape') return lightbox.classList.remove('active');
+      lightbox.querySelector('img').src = fullSources[currentIndex];
+    });
+
+    // Language switcher persists via localStorage
+    const translations = {
+      en: {"nav.home":"Home","nav.suites":"Suites","nav.amenities":"Amenities","nav.gallery":"Gallery","nav.contact":"Contact","gallery.heading":"Gallery","footer.contact":"Call us: +381 XX XXX XXXX | Email: info@iconapartments.rs","footer.rights":"All Rights Reserved."},
+      sr: {"nav.home":"Početna","nav.suites":"Smeštaj","nav.amenities":"Sadržaji","nav.gallery":"Galerija","nav.contact":"Kontakt","gallery.heading":"Galerija","footer.contact":"Pozovite nas: +381 XX XXX XXXX | Email: info@iconapartments.rs","footer.rights":"Sva prava zadržana."},
+      ru: {"nav.home":"Главная","nav.suites":"Номера","nav.amenities":"Удобства","nav.gallery":"Галерея","nav.contact":"Контакты","gallery.heading":"Галерея","footer.contact":"Звоните: +381 XX XXX XXXX | Email: info@iconapartments.rs","footer.rights":"Все права защищены."}
+    };
+    function setLanguage(lang) {
+      localStorage.setItem('language', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-key]').forEach(el => {
+        el.textContent = translations[lang][el.getAttribute('data-key')];
+      });
+      document.querySelectorAll('.lang-switch span').forEach(span => span.classList.toggle('active', span.getAttribute('data-lang') === lang));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('language') || 'sr';
+      setLanguage(saved);
+      document.querySelectorAll('.lang-switch span').forEach(span => span.addEventListener('click', () => setLanguage(span.getAttribute('data-lang'))));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICON APARTMENTS | Apartmani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --primary-color: #2D5F3E; --light-bg: #f5f5f5; --font-family: 'Poppins', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-family); color: #333; line-height: 1.6; }
+    header { position: fixed; width: 100%; top: 0; left: 0; background: rgba(255,255,255,0.95); display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .logo img { height: 50px; width: auto; }
+    .lang-switch { margin-left: 1rem; font-size: 0.9rem; }
+    .lang-switch span { cursor: pointer; margin: 0 0.3rem; }
+    .lang-switch .active { font-weight: 600; color: var(--primary-color); }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle span { width: 25px; height: 3px; background: #333; margin: 4px 0; transition: 0.3s; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav ul.active { display: flex; }
+    nav a { text-decoration: none; color: #333; font-weight: 500; }
+    nav a:hover { color: var(--primary-color); }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; position: absolute; top: 1rem; right: 1rem; }
+      nav ul { display: none; flex-direction: column; background: #fff; position: absolute; top: 60px; right: 0; width: 200px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+      nav ul.active { display: flex; }
+    }
+    main { padding: 6rem 2rem 2rem; }
+    .apartment { display: flex; gap: 2rem; margin-bottom: 3rem; background: var(--light-bg); border-radius: 8px; overflow: hidden; }
+    .apartment img { width: 50%; object-fit: cover; }
+    .apartment-content { flex: 1; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .apartment-content h3 { margin-bottom: 1rem; color: var(--primary-color); }
+    .apartment-content p { flex: 1; margin-bottom: 1rem; }
+    .apartment-content .btn { align-self: flex-end; background: var(--primary-color); color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 4px; text-decoration: none; font-weight: 500; }
+    footer { background: #222; color: #fff; text-align: center; padding: 2rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <div class="logo"><img src="./Logo ICON-1.png" alt="ICON APARTMENTS" /></div>
+      <div class="lang-switch">
+        <span class="active" data-lang="sr">SR</span> | <span data-lang="en">EN</span> | <span data-lang="ru">RU</span>
+      </div>
+    </div>
+    <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html" data-key="nav.home">Početna</a></li>
+        <li><a href="index.html#suites" data-key="nav.suites">Smeštaj</a></li>
+        <li><a href="index.html#amenities" data-key="nav.amenities">Sadržaji</a></li>
+        <li><a href="gallery.html" data-key="nav.gallery">Galerija</a></li>
+        <li><a href="apartments.html" data-key="nav.apartments">Apartmani</a></li>
+        <li><a href="index.html#contact" data-key="nav.contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="apartment">
+        <img src="./photos/apt1.jpg" alt="Apartman 1" />
+        <div class="apartment-content">
+          <h3 data-key="apt1.title">Apartman 1</h3>
+          <p data-key="apt1.desc">Ovdje napišite opis prvog apartmana.</p>
+          <a href="apt1.html" class="btn" data-key="apt1.btn">See more</a>
+        </div>
+      </div>
+      <div class="apartment">
+        <img src="./photos/apt2.jpg" alt="Apartman 2" />
+        <div class="apartment-content">
+          <h3 data-key="apt2.title">Apartman 2</h3>
+          <p data-key="apt2.desc">Ovdje napišite opis drugog apartmana.</p>
+          <a href="apt2.html" class="btn" data-key="apt2.btn">See more</a>
+        </div>
+      </div>
+      <div class="apartment">
+        <img src="./photos/apt3.jpg" alt="Apartman 3" />
+        <div class="apartment-content">
+          <h3 data-key="apt3.title">Apartman 3</h3>
+          <p data-key="apt3.desc">Ovdje napišite opis trećeg apartmana.</p>
+          <a href="apt3.html" class="btn" data-key="apt3.btn">See more</a>
+        </div>
+      </div>
+      <div class="apartment">
+        <img src="./photos/apt4.jpg" alt="Apartman 4" />
+        <div class="apartment-content">
+          <h3 data-key="apt4.title">Apartman 4</h3>
+          <p data-key="apt4.desc">Ovdje napišite opis četvrtog apartmana.</p>
+          <a href="apt4.html" class="btn" data-key="apt4.btn">See more</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p data-key="footer.copy">© 2025 ICON APARTMENTS. Sva prava zadržana.</p>
+  </footer>
+  <script>
+    // Menu toggle
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navList').classList.toggle('active');
+    });
+    // Language switcher persists via localStorage
+    const translations = {
+      en: {"nav.home":"Home","nav.suites":"Suites","nav.amenities":"Amenities","nav.gallery":"Gallery","nav.apartments":"Apartments","nav.contact":"Contact","apt1.title":"Apartment 1","apt1.desc":"Write description for apartment 1.","apt1.btn":"See more","apt2.title":"Apartment 2","apt2.desc":"Write description for apartment 2.","apt2.btn":"See more","apt3.title":"Apartment 3","apt3.desc":"Write description for apartment 3.","apt3.btn":"See more","apt4.title":"Apartment 4","apt4.desc":"Write description for apartment 4.","apt4.btn":"See more","footer.copy":"© 2025 ICON APARTMENTS. All Rights Reserved."},
+      sr: {"nav.home":"Početna","nav.suites":"Smeštaj","nav.amenities":"Sadržaji","nav.gallery":"Galerija","nav.apartments":"Apartmani","nav.contact":"Kontakt","apt1.title":"Apartman 1","apt1.desc":"Ovdje napišite opis prvog apartmana.","apt1.btn":"Više","apt2.title":"Apartman 2","apt2.desc":"Ovdje napišite opis drugog apartmana.","apt2.btn":"Više","apt3.title":"Apartman 3","apt3.desc":"Ovdje napišite opis trećeg apartmana.","apt3.btn":"Više","apt4.title":"Apartman 4","apt4.desc":"Ovdje napišite opis četvrtog apartmana.","apt4.btn":"Više","footer.copy":"© 2025 ICON APARTMENTS. Sva prava zadržana."},
+      ru: {"nav.home":"Главная","nav.suites":"Номера","nav.amenities":"Удобства","nav.gallery":"Галерея","nav.apartments":"Апартаменты","nav.contact":"Контакты","apt1.title":"Апартамент 1","apt1.desc":"Напишите описание первого апартамента.","apt1.btn":"Подробнее","apt2.title":"Апартамент 2","apt2.desc":"Напишите описание второго апартамента.","apt2.btn":"Подробнее","apt3.title":"Апартамент 3","apt3.desc":"Напишите описание третьего апартамента.","apt3.btn":"Подробнее","apt4.title":"Апартамент 4","apt4.desc":"Напишите описание четвертого апартамента.","apt4.btn":"Подробнее","footer.copy":"© 2025 ICON APARTMENTS. Все права защищены."}
+    };
+    function setLanguage(lang) {
+      localStorage.setItem('language', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-key]').forEach(el => {
+        el.textContent = translations[lang][el.getAttribute('data-key')];
+      });
+      document.querySelectorAll('.lang-switch span').forEach(span => {
+        span.classList.toggle('active', span.getAttribute('data-lang') === lang);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('language') || 'sr';
+      setLanguage(saved);
+      document.querySelectorAll('.lang-switch span').forEach(span => span.addEventListener('click', () => setLanguage(span.getAttribute('data-lang'))));
+    });
+  </script>
+</body>
+</html>
