@@ -26,12 +26,12 @@
       nav ul.active { display: flex; }
     }
     main { padding: 6rem 2rem 2rem; }
-    .apartment { display: flex; gap: 2rem; margin-bottom: 3rem; background: var(--light-bg); border-radius: 8px; overflow: hidden; }
-    .apartment img { width: 50%; object-fit: cover; }
-    .apartment-content { flex: 1; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
-    .apartment-content h3 { margin-bottom: 1rem; color: var(--primary-color); }
-    .apartment-content p { flex: 1; margin-bottom: 1rem; }
-    .apartment-content .btn { align-self: flex-end; background: var(--primary-color); color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 4px; text-decoration: none; font-weight: 500; }
+    .apartment { display: flex; gap: 2rem; margin-bottom: 2rem; background: var(--light-bg); border-radius: 8px; overflow: hidden; }
+    .apartment img { width: 300px; height: 300px; object-fit: cover; }
+    .apartment-content { flex: 1; padding: 1rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .apartment-content h3 { margin-bottom: 0.75rem; color: var(--primary-color); }
+    .apartment-content p { flex: 1; margin-bottom: 0.5rem; }
+    .apartment-content .btn { align-self: flex-end; background: var(--primary-color); color: #fff; padding: 0.4rem 0.8rem; border: none; border-radius: 4px; text-decoration: none; font-weight: 500; }
     footer { background: #222; color: #fff; text-align: center; padding: 2rem; font-size: 0.9rem; }
   </style>
 </head>
@@ -47,10 +47,9 @@
     <nav>
       <ul id="navList">
         <li><a href="index.html" data-key="nav.home">Početna</a></li>
-        <li><a href="index.html#suites" data-key="nav.suites">Smeštaj</a></li>
+        <li><a href="./apartments.html" data-key="nav.suites">Smeštaj</a></li>
         <li><a href="index.html#amenities" data-key="nav.amenities">Sadržaji</a></li>
         <li><a href="gallery.html" data-key="nav.gallery">Galerija</a></li>
-        <li><a href="apartments.html" data-key="nav.apartments">Apartmani</a></li>
         <li><a href="index.html#contact" data-key="nav.contact">Kontakt</a></li>
       </ul>
     </nav>
@@ -58,7 +57,7 @@
   <main>
     <section>
       <div class="apartment">
-        <img src="./photos/apt1.jpg" alt="Apartman 1" />
+        <img src="./photos/20.jpg" alt="Apartman 1" />
         <div class="apartment-content">
           <h3 data-key="apt1.title">Apartman 1</h3>
           <p data-key="apt1.desc">Ovdje napišite opis prvog apartmana.</p>
@@ -66,7 +65,7 @@
         </div>
       </div>
       <div class="apartment">
-        <img src="./photos/apt2.jpg" alt="Apartman 2" />
+        <img src="./photos/19.jpg" alt="Apartman 2" />
         <div class="apartment-content">
           <h3 data-key="apt2.title">Apartman 2</h3>
           <p data-key="apt2.desc">Ovdje napišite opis drugog apartmana.</p>
@@ -74,7 +73,7 @@
         </div>
       </div>
       <div class="apartment">
-        <img src="./photos/apt3.jpg" alt="Apartman 3" />
+        <img src="./photos/33.jpg" alt="Apartman 3" />
         <div class="apartment-content">
           <h3 data-key="apt3.title">Apartman 3</h3>
           <p data-key="apt3.desc">Ovdje napišite opis trećeg apartmana.</p>
@@ -82,7 +81,7 @@
         </div>
       </div>
       <div class="apartment">
-        <img src="./photos/apt4.jpg" alt="Apartman 4" />
+        <img src="./photos/15.jpg" alt="Apartman 4" />
         <div class="apartment-content">
           <h3 data-key="apt4.title">Apartman 4</h3>
           <p data-key="apt4.desc">Ovdje napišite opis četvrtog apartmana.</p>
@@ -102,7 +101,7 @@
     // Language switcher persists via localStorage
     const translations = {
       en: {"nav.home":"Home","nav.suites":"Suites","nav.amenities":"Amenities","nav.gallery":"Gallery","nav.apartments":"Apartments","nav.contact":"Contact","apt1.title":"Apartment 1","apt1.desc":"Write description for apartment 1.","apt1.btn":"See more","apt2.title":"Apartment 2","apt2.desc":"Write description for apartment 2.","apt2.btn":"See more","apt3.title":"Apartment 3","apt3.desc":"Write description for apartment 3.","apt3.btn":"See more","apt4.title":"Apartment 4","apt4.desc":"Write description for apartment 4.","apt4.btn":"See more","footer.copy":"© 2025 ICON APARTMENTS. All Rights Reserved."},
-      sr: {"nav.home":"Početna","nav.suites":"Smeštaj","nav.amenities":"Sadržaji","nav.gallery":"Galerija","nav.apartments":"Apartmani","nav.contact":"Kontakt","apt1.title":"Apartman 1","apt1.desc":"Ovdje napišite opis prvog apartmana.","apt1.btn":"Više","apt2.title":"Apartman 2","apt2.desc":"Ovdje napišite opis drugog apartmana.","apt2.btn":"Više","apt3.title":"Apartman 3","apt3.desc":"Ovdje napišite opis trećeg apartmana.","apt3.btn":"Više","apt4.title":"Apartman 4","apt4.desc":"Ovdje napišite opis četvrtog apartmana.","apt4.btn":"Više","footer.copy":"© 2025 ICON APARTMENTS. Sva prava zadržana."},
+      sr: {"nav.home":"Početna","nav.suites":"Smeštaj","nav.amenities":"Sadržaji","nav.gallery":"Galerija","nav.apartments":"Apartmani","nav.contact":"Kontakt","apt1.title":"Apartman 1","apt1.desc":"Ovdje napišite opis prvog apartmana.","apt1.btn":"Saznaj više","apt2.title":"Apartman 2","apt2.desc":"Ovdje napišite opis drugog apartmana.","apt2.btn":"Saznaj više","apt3.title":"Apartman 3","apt3.desc":"Ovdje napišite opis trećeg apartmana.","apt3.btn":"Saznaj više","apt4.title":"Apartman 4","apt4.desc":"Ovdje napišite opis četvrtog apartmana.","apt4.btn":"Saznaj više","footer.copy":"© 2025 ICON APARTMENTS. Sva prava zadržana."},
       ru: {"nav.home":"Главная","nav.suites":"Номера","nav.amenities":"Удобства","nav.gallery":"Галерея","nav.apartments":"Апартаменты","nav.contact":"Контакты","apt1.title":"Апартамент 1","apt1.desc":"Напишите описание первого апартамента.","apt1.btn":"Подробнее","apt2.title":"Апартамент 2","apt2.desc":"Напишите описание второго апартамента.","apt2.btn":"Подробнее","apt3.title":"Апартамент 3","apt3.desc":"Напишите описание третьего апартамента.","apt3.btn":"Подробнее","apt4.title":"Апартамент 4","apt4.desc":"Напишите описание четвертого апартамента.","apt4.btn":"Подробнее","footer.copy":"© 2025 ICON APARTMENTS. Все права защищены."}
     };
     function setLanguage(lang) {
